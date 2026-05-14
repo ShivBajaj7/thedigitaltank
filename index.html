@@ -29,6 +29,7 @@ body {
   margin-top: 15px;
 }
 
+/* BUTTON */
 .btn {
   background: linear-gradient(90deg, #00ff88, #00ccff);
   color: black;
@@ -38,6 +39,11 @@ body {
   margin-top: 25px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* SECTION */
@@ -59,6 +65,11 @@ body {
   padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* CASE */
@@ -79,6 +90,19 @@ body {
   padding: 15px;
   border-radius: 50%;
   text-decoration: none;
+  font-size: 20px;
+}
+
+/* SCROLL ANIMATION */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -86,14 +110,14 @@ body {
 <body>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero fade-up">
 <h1>We Generate High-Quality Leads That Actually Convert</h1>
 <p>Performance marketing systems built to scale your business — not just traffic.</p>
 <a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Strategy</a>
 </div>
 
 <!-- PROBLEMS -->
-<div class="section">
+<div class="section fade-up">
 <h2>Why Most Businesses Fail With Ads</h2>
 <div class="cards">
 <div class="card">❌ Low quality leads</div>
@@ -103,7 +127,7 @@ body {
 </div>
 
 <!-- SOLUTION -->
-<div class="section">
+<div class="section fade-up">
 <h2>What We Do Differently</h2>
 <div class="cards">
 <div class="card">We build full-funnel systems</div>
@@ -113,7 +137,7 @@ body {
 </div>
 
 <!-- CASE STUDY -->
-<div class="section">
+<div class="section fade-up">
 <h2>Results</h2>
 <div class="case">
 <h3>Real Estate Campaign</h3>
@@ -122,7 +146,7 @@ body {
 </div>
 
 <!-- PROCESS -->
-<div class="section">
+<div class="section fade-up">
 <h2>How It Works</h2>
 <div class="cards">
 <div class="card">1. Strategy & Setup</div>
@@ -132,13 +156,28 @@ body {
 </div>
 
 <!-- CTA -->
-<div class="hero">
+<div class="hero fade-up">
 <h2>Want Consistent Leads?</h2>
 <a href="https://wa.me/91XXXXXXXXXX" class="btn">Start Now</a>
 </div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
+
+<!-- JS FOR SCROLL -->
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
