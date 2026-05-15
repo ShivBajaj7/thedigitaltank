@@ -9,46 +9,76 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, #0a0a0a, #111);
+  background: radial-gradient(circle at top, #111, #000);
   color: white;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,136,0.2), transparent);
+  top: -200px;
+  left: -200px;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,200,255,0.2), transparent);
+  bottom: -200px;
+  right: -200px;
+  z-index: -1;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 54px;
   line-height: 1.3;
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
   color: #aaa;
-  margin-top: 15px;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 /* BUTTON */
 .btn {
   background: linear-gradient(90deg, #00ff88, #00ccff);
   color: black;
-  padding: 14px 28px;
-  border-radius: 8px;
+  padding: 16px 32px;
+  border-radius: 10px;
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0,255,136,0.3);
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0,255,136,0.6);
 }
 
 /* SECTION */
 .section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 1000px;
   margin: auto;
 }
@@ -56,47 +86,50 @@ body {
 /* CARDS */
 .cards {
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0,255,136,0.4);
 }
 
 /* CASE */
 .case {
   background: linear-gradient(90deg, #00ff88, #00ccff);
   color: black;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 30px;
+  border-radius: 14px;
   text-align: center;
+  font-weight: bold;
 }
 
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   background: #25D366;
-  padding: 15px;
+  padding: 16px;
   border-radius: 50%;
+  font-size: 22px;
   text-decoration: none;
-  font-size: 20px;
+  box-shadow: 0 0 15px rgba(37,211,102,0.6);
 }
 
-/* SCROLL ANIMATION */
+/* ANIMATION */
 .fade-up {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
   transition: all 0.8s ease;
 }
 
@@ -111,18 +144,18 @@ body {
 
 <!-- HERO -->
 <div class="hero fade-up">
-<h1>We Generate High-Quality Leads That Actually Convert</h1>
-<p>Performance marketing systems built to scale your business — not just traffic.</p>
+<h1>We Build Lead Systems That Scale Your Revenue</h1>
+<p>Performance-driven marketing designed to generate consistent, high-quality leads.</p>
 <a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Strategy</a>
 </div>
 
 <!-- PROBLEMS -->
 <div class="section fade-up">
-<h2>Why Most Businesses Fail With Ads</h2>
+<h2>Why Most Businesses Struggle With Ads</h2>
 <div class="cards">
-<div class="card">❌ Low quality leads</div>
-<div class="card">❌ Wasted ad spend</div>
-<div class="card">❌ No predictable pipeline</div>
+<div class="card">❌ Low quality leads that don’t convert</div>
+<div class="card">❌ High ad spend with poor ROI</div>
+<div class="card">❌ No predictable growth system</div>
 </div>
 </div>
 
@@ -130,18 +163,17 @@ body {
 <div class="section fade-up">
 <h2>What We Do Differently</h2>
 <div class="cards">
-<div class="card">We build full-funnel systems</div>
-<div class="card">We focus on lead quality, not volume</div>
-<div class="card">We optimize for conversions & ROI</div>
+<div class="card">Full funnel lead generation systems</div>
+<div class="card">Focus on quality over quantity</div>
+<div class="card">Continuous optimization for ROI</div>
 </div>
 </div>
 
-<!-- CASE STUDY -->
+<!-- CASE -->
 <div class="section fade-up">
-<h2>Results</h2>
+<h2>Proven Results</h2>
 <div class="case">
-<h3>Real Estate Campaign</h3>
-<p>187 Leads | ₹92 CPL | 3X ROI</p>
+187 Leads | ₹92 CPL | 3X ROI in 30 Days
 </div>
 </div>
 
@@ -150,21 +182,21 @@ body {
 <h2>How It Works</h2>
 <div class="cards">
 <div class="card">1. Strategy & Setup</div>
-<div class="card">2. Lead Generation</div>
-<div class="card">3. Scale & Optimize</div>
+<div class="card">2. Launch & Optimize Ads</div>
+<div class="card">3. Scale Winning Campaigns</div>
 </div>
 </div>
 
 <!-- CTA -->
 <div class="hero fade-up">
-<h2>Want Consistent Leads?</h2>
+<h2>Ready to Scale Your Leads?</h2>
 <a href="https://wa.me/91XXXXXXXXXX" class="btn">Start Now</a>
 </div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
 
-<!-- JS FOR SCROLL -->
+<!-- JS -->
 <script>
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -173,10 +205,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-
-document.querySelectorAll('.fade-up').forEach(el => {
-  observer.observe(el);
-});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 </body>
