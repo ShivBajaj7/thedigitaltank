@@ -9,204 +9,130 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #111, #000);
+  background: #0a0a0a;
   color: white;
-  overflow-x: hidden;
 }
 
-/* BACKGROUND GLOW */
-body::before {
-  content: "";
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,255,136,0.2), transparent);
-  top: -200px;
-  left: -200px;
-  z-index: -1;
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0,200,255,0.2), transparent);
-  bottom: -200px;
-  right: -200px;
-  z-index: -1;
+.logo {
+  font-weight: bold;
+}
+
+.nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 140px 20px;
+  padding: 120px 20px;
 }
 
 .hero h1 {
-  font-size: 54px;
-  line-height: 1.3;
-  background: linear-gradient(90deg, #00ff88, #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 48px;
 }
 
-.hero p {
-  color: #aaa;
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-/* BUTTON */
 .btn {
-  background: linear-gradient(90deg, #00ff88, #00ccff);
+  background: linear-gradient(90deg,#00ff88,#00ccff);
   color: black;
-  padding: 16px 32px;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 30px;
+  padding: 12px 25px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 0 20px rgba(0,255,136,0.3);
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 30px rgba(0,255,136,0.6);
+  border-radius: 6px;
 }
 
 /* SECTION */
 .section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
-/* CARDS */
 .cards {
   display: grid;
-  gap: 25px;
+  gap: 20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(15px);
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.4s;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(0,255,136,0.4);
-}
-
-/* CASE */
-.case {
-  background: linear-gradient(90deg, #00ff88, #00ccff);
-  color: black;
-  padding: 30px;
-  border-radius: 14px;
+/* FOOTER */
+.footer {
+  padding: 40px;
   text-align: center;
-  font-weight: bold;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  padding: 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(37,211,102,0.6);
-}
-
-/* ANIMATION */
-.fade-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+  background: #000;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">The Digital Tank</div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
 <!-- HERO -->
-<div class="hero fade-up">
-<h1>We Build Lead Systems That Scale Your Revenue</h1>
-<p>Performance-driven marketing designed to generate consistent, high-quality leads.</p>
-<a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Strategy</a>
+<div class="hero">
+  <h1>Performance Marketing That Drives Real Growth</h1>
+  <p>We help businesses scale with data-driven marketing strategies.</p>
+  <a href="#" class="btn">Get Started</a>
 </div>
 
-<!-- PROBLEMS -->
-<div class="section fade-up">
-<h2>Why Most Businesses Struggle With Ads</h2>
-<div class="cards">
-<div class="card">❌ Low quality leads that don’t convert</div>
-<div class="card">❌ High ad spend with poor ROI</div>
-<div class="card">❌ No predictable growth system</div>
-</div>
-</div>
-
-<!-- SOLUTION -->
-<div class="section fade-up">
-<h2>What We Do Differently</h2>
-<div class="cards">
-<div class="card">Full funnel lead generation systems</div>
-<div class="card">Focus on quality over quantity</div>
-<div class="card">Continuous optimization for ROI</div>
-</div>
+<!-- SERVICES -->
+<div class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">Meta Ads</div>
+    <div class="card">Google Ads</div>
+    <div class="card">Performance Marketing</div>
+    <div class="card">Funnel Optimization</div>
+  </div>
 </div>
 
-<!-- CASE -->
-<div class="section fade-up">
-<h2>Proven Results</h2>
-<div class="case">
-187 Leads | ₹92 CPL | 3X ROI in 30 Days
-</div>
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Us</h2>
+  <p>We are a performance marketing agency focused on delivering measurable results through data-driven strategies.</p>
 </div>
 
-<!-- PROCESS -->
-<div class="section fade-up">
-<h2>How It Works</h2>
-<div class="cards">
-<div class="card">1. Strategy & Setup</div>
-<div class="card">2. Launch & Optimize Ads</div>
-<div class="card">3. Scale Winning Campaigns</div>
-</div>
+<!-- CASE STUDY -->
+<div class="section">
+  <h2>Results</h2>
+  <div class="card">
+    187 Leads | ₹92 CPL | 3X ROI
+  </div>
 </div>
 
 <!-- CTA -->
-<div class="hero fade-up">
-<h2>Ready to Scale Your Leads?</h2>
-<a href="https://wa.me/91XXXXXXXXXX" class="btn">Start Now</a>
+<div class="section">
+  <h2>Ready to Scale?</h2>
+  <a href="#" class="btn">Book a Call</a>
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
-
-<!-- JS -->
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-});
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
+<!-- FOOTER -->
+<div class="footer">
+  <p>© The Digital Tank</p>
+</div>
 
 </body>
 </html>
