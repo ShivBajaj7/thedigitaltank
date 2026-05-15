@@ -5,134 +5,296 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Digital Tank</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0a0a0a;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-/* HEADER */
-.header {
+body {
+  background: #050505;
+  color: white;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(0,0,0,0.8);
+  padding: 20px 60px;
   position: sticky;
   top: 0;
+  background: rgba(5,5,5,0.8);
+  backdrop-filter: blur(10px);
 }
 
-.logo {
-  font-weight: bold;
+nav h2 {
+  color: #4ade80;
 }
 
-.nav a {
+nav a {
   margin-left: 20px;
-  color: white;
+  color: #ccc;
   text-decoration: none;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 120px 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34,197,94,0.25), transparent);
+  filter: blur(100px);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 56px;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #4ade80;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 18px;
 }
 
 .btn {
-  background: linear-gradient(90deg,#00ff88,#00ccff);
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  border-radius: 8px;
+  background: #4ade80;
   color: black;
-  padding: 12px 25px;
   text-decoration: none;
-  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* SECTION */
-.section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(74,222,128,0.6);
 }
 
-.cards {
-  display: grid;
+/* ===== SECTION ===== */
+section {
+  padding: 80px 60px;
+}
+
+/* ===== STATS ===== */
+.stats {
+  display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
+  background: #0a0a0a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1;
+  transition: 0.3s;
 }
 
-/* FOOTER */
-.footer {
-  padding: 40px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(74,222,128,0.2);
+}
+
+.card h2 {
+  color: #4ade80;
+  font-size: 36px;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+/* ===== CASE STUDIES ===== */
+.case {
+  border: 1px solid #111;
+}
+
+/* ===== TEAM ===== */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
   text-align: center;
-  background: #000;
+}
+
+.member {
+  background: #0a0a0a;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.member h3 {
+  margin-top: 10px;
+}
+
+.member p {
+  color: #aaa;
+}
+
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  background: radial-gradient(circle, rgba(34,197,94,0.2), transparent);
+  padding: 100px 20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="logo">The Digital Tank</div>
-  <div class="nav">
-    <a href="#">Home</a>
+<!-- NAV -->
+<nav>
+  <h2>The Digital Tank</h2>
+  <div>
     <a href="#">Services</a>
+    <a href="#">Work</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
   </div>
-</div>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Performance Marketing That Drives Real Growth</h1>
-  <p>We help businesses scale with data-driven marketing strategies.</p>
-  <a href="#" class="btn">Get Started</a>
+  <h1>We Turn Ad Spend Into <span class="highlight">Profitable Revenue</span></h1>
+  <p>Performance marketing agency helping brands scale with Meta & Google Ads.</p>
+  <a href="#" class="btn">Get Free Growth Audit</a>
 </div>
+
+<!-- STATS -->
+<section>
+  <div class="stats">
+    <div class="card">
+      <h2>340%</h2>
+      <p>Avg ROAS</p>
+    </div>
+    <div class="card">
+      <h2>$50M+</h2>
+      <p>Ad Spend Managed</p>
+    </div>
+    <div class="card">
+      <h2>2.4x</h2>
+      <p>Revenue Growth</p>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
-<div class="section">
+<section>
   <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">Meta Ads</div>
-    <div class="card">Google Ads</div>
-    <div class="card">Performance Marketing</div>
-    <div class="card">Funnel Optimization</div>
+  <div class="services">
+    <div class="card">Paid Media (Meta & Google Ads)</div>
+    <div class="card">Conversion Funnels & CRO</div>
+    <div class="card">Analytics & Tracking</div>
+    <div class="card">Creative Strategy</div>
+    <div class="card">Growth Strategy</div>
+    <div class="card">Scaling Campaigns</div>
   </div>
-</div>
+</section>
 
-<!-- ABOUT -->
-<div class="section">
-  <h2>About Us</h2>
-  <p>We are a performance marketing agency focused on delivering measurable results through data-driven strategies.</p>
-</div>
-
-<!-- CASE STUDY -->
-<div class="section">
-  <h2>Results</h2>
-  <div class="card">
-    187 Leads | ₹92 CPL | 3X ROI
+<!-- CASE STUDIES -->
+<section>
+  <h2>Results That Speak</h2>
+  <div class="services">
+    <div class="card case">
+      <h2>+320%</h2>
+      <p>Real Estate Lead Growth</p>
+    </div>
+    <div class="card case">
+      <h2>4.2x</h2>
+      <p>DTC ROAS</p>
+    </div>
+    <div class="card case">
+      <h2>+210%</h2>
+      <p>Coaching Leads</p>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- TEAM -->
+<section>
+  <h2>Our Team</h2>
+  <div class="team">
+    <div class="member">
+      <h3>Shiv Bajaj</h3>
+      <p>Founder</p>
+    </div>
+    <div class="member">
+      <h3>Mrunal</h3>
+      <p>Head of Social Media</p>
+    </div>
+    <div class="member">
+      <h3>Srinivas</h3>
+      <p>Head of Performance Marketing</p>
+    </div>
+    <div class="member">
+      <h3>Silkesha</h3>
+      <p>Business Development</p>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
-<div class="section">
-  <h2>Ready to Scale?</h2>
-  <a href="#" class="btn">Book a Call</a>
-</div>
+<section class="cta">
+  <h2>Ready to Scale Your Revenue?</h2>
+  <p>Book a free 30-minute strategy call.</p>
+  <a href="#" class="btn">Book Call</a>
+</section>
 
 <!-- FOOTER -->
-<div class="footer">
-  <p>© The Digital Tank</p>
-</div>
+<footer>
+  © 2026 The Digital Tank. All rights reserved.
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
 
 </body>
 </html>
